@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Página no encontrada</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff7f00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 4rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .code-snippet {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+            box-shadow: 0 0 10px #ff7f00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Error 404</h1>
+    <p>Página no encontrada</p>
+    <div class="code-snippet">
+        <pre>
+<span style="color: #00ff00;">// 404 Error - File Not Found</span>
+<span style="color: #ff7f00;">function</span> handleError() {
+    console.log(<span style="color: #00ff00;">"Oops! Algo salió mal..."</span>);
+    <span style="color: #ff7f00;">return</span> 404;
+}
+handleError();
+        </pre>
+    </div>
+</body>
+</html>
