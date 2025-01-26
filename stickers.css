@@ -1,0 +1,53 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#stickerBank {
+    margin: 20px;
+}
+
+.sticker {
+    width: 50px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sticker:hover {
+    transform: scale(1.2);
+    color: #ff7f00;
+}
+
+.canvas {
+    width: 500px;
+    height: 500px;
+    border: 2px dashed #ff7f00;
+    margin: 20px auto;
+    position: relative;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.canvas img {
+    position: absolute;
+    cursor: move;
+    max-width: 100px;
+    max-height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.canvas img:hover {
+    transform: scale(1.2);
+}

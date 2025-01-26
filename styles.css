@@ -55,7 +55,7 @@ nav ul li a:hover {
 }
 .icon {
   font-size: 5rem;
-  color: #ff7f00;
+  color: #f39c12;
   margin-bottom: 1rem;
 }
 .code-box {
@@ -99,7 +99,7 @@ nav ul li a:hover {
 }
 .section-link {
   text-decoration: none;
-  color: #ff7f00;
+  color: #f39c12;
   width: 100%;
 }
 .contact-me {
@@ -109,7 +109,7 @@ nav ul li a:hover {
 .contact-me h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #ff7f00;
+  color: #f39c12;
 }
 .social-icons {
   display: flex;
@@ -122,7 +122,7 @@ nav ul li a:hover {
   transition: color 0.3s;
 }
 .social-icons a:hover {
-  color: #ff7f00;
+  color: #f39c12;
 }
 footer {
   background-color: #333;
