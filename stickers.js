@@ -60,7 +60,7 @@ stickers.forEach(sticker => {
     });
 });
 
-// Save stickers to localStorage
+// Save stickers to the server
 function saveStickers() {
     const stickersData = [];
     document.querySelectorAll('.canvas img').forEach(sticker => {
@@ -70,23 +70,30 @@ function saveStickers() {
             top: sticker.style.top
         });
     });
-    localStorage.setItem('stickers', JSON.stringify(stickersData));
+    fetch('/save-stickers', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(stickersData)
+    });
 }
 
-// Load stickers from localStorage
+// Load stickers from the server
 function loadStickers() {
-    const stickersData = JSON.parse(localStorage.getItem('stickers'));
-    if (stickersData) {
-        stickersData.forEach(data => {
-            const img = document.createElement('img');
-            img.src = data.src;
-            img.classList.add('draggable');
-            img.style.left = data.left;
-            img.style.top = data.top;
-            canvas.appendChild(img);
-            makeStickerDraggable(img);
+    fetch('/load-stickers')
+        .then(response => response.json())
+        .then(stickersData => {
+            stickersData.forEach(data => {
+                const img = document.createElement('img');
+                img.src = data.src;
+                img.classList.add('draggable');
+                img.style.left = data.left;
+                img.style.top = data.top;
+                canvas.appendChild(img);
+                makeStickerDraggable(img);
+            });
         });
-    }
 }
 
 // Load stickers on page load
