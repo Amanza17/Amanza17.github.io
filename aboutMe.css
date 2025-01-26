@@ -1,73 +1,258 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1a1a1a;
     color: #f1f1f1;
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
+
+/* Header styling */
 header {
     background-color: #333;
-    color: #f39c12;
-    padding: 1rem 0;
+    color: #ff7f00;
+    padding: 2rem 0;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 header p {
-    margin: 0;
-    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    opacity: 0.9;
 }
+
+/* Section styles */
 section {
-    padding: 2rem;
-    max-width: 800px;
+    padding: 3rem;
+    max-width: 900px;
     margin: auto;
     text-align: center;
+    background: rgba(51, 51, 51, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
 }
 section h2 {
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 0.5rem;
-    color: #f39c12;
+    border-bottom: 3px solid #ff7f00;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: #ff7f00;
+    font-size: 2rem;
 }
+
+/* Footer styling */
 footer {
     background-color: #333;
     color: #f1f1f1;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     margin-top: 2rem;
-}
-a {
-    color: #f39c12;
-    text-decoration: none;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
 }
 
+/* Links */
+a {
+    color: #ff7f00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #f1f1f1;
+    text-decoration: underline;
+}
+
+/* Social icons */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 .social-icons a {
-    color: #f39c12;
-    font-size: 2rem;
-    transition: color 0.3s;
+    color: #ff7f00;
+    font-size: 2.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 .social-icons a:hover {
     color: #f1f1f1;
+    transform: scale(1.1);
 }
 
+/* Button styling */
 .home-button {
     margin-top: 2rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
     color: #f1f1f1;
-    background-color: #f39c12;
+    background-color: #ff7f00;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .home-button:hover {
     background-color: #e67e22;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header p {
+        font-size: 1.2rem;
+    }
+    .home-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .social-icons a {
+        font-size: 2rem;
+    }
+}
+/* Repo card container */
+.repo-card {
+    background-color: #0d1117;
+    color: #f1f1f1;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Repo title link */
+.repo-title {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.repo-title:hover {
+    text-decoration: underline;
+}
+
+/* Repo info container */
+.repo-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #8b949e;
+}
+
+/* Language label styles */
+.repo-language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.repo-language::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Language-specific colors */
+.python::before {
+    background-color: #3572A5; /* Python blue */
+}
+
+.cpp::before {
+    background-color: #f34b7d; /* C++ pinkish red */
+}
+
+.java::before {
+    background-color: #b07219; /* Java brown */
+}
+
+.html::before {
+    background-color: #e34c26; /* HTML orange */
+}
+
+.css::before {
+    background-color: #563d7c; /* CSS purple */
+}
+
+.javascript::before {
+    background-color: #f1e05a; /* JavaScript yellow */
+}
+
+/* Badge for public visibility */
+.repo-badge {
+    background: #30363d;
+    color: #c9d1d9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .repo-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .repo-title {
+        font-size: 1.2rem;
+    }
+
+    .repo-info {
+        font-size: 0.9rem;
+    }
+}
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #f1f1f1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2);
+    color: #ff7f00;
+}
+.skill-icon img {
+    width: 3rem;
+    height: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon img:hover {
+    transform: scale(1.2);
 }
