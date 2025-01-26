@@ -7,6 +7,8 @@ body {
     text-align: center;
     line-height: 1.6;
     font-size: 1.1rem;
+    position: relative;
+    height: 100vh;
 }
 
 .hidden {
@@ -30,14 +32,14 @@ body {
 }
 
 .canvas {
-    width: 500px;
-    height: 500px;
-    border: 2px dashed #ff7f00;
-    margin: 20px auto;
-    position: relative;
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: calc(100vh - 200px); /* Adjust height to fill the page below the sticker bank */
+    border: none;
+    margin: 0;
+    position: absolute;
+    top: 200px; /* Adjust top position to be below the sticker bank */
+    left: 0;
+    background-color: transparent;
 }
 
 .canvas img {
