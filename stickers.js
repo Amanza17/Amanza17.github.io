@@ -7,34 +7,7 @@ const canvas = document.getElementById('canvas');
 
 // Function to make stickers draggable
 function makeStickerDraggable(sticker) {
-    sticker.addEventListener('mousedown', function(e) {
-        let shiftX = e.clientX - sticker.getBoundingClientRect().left;
-        let shiftY = e.clientY - sticker.getBoundingClientRect().top;
-
-        function moveAt(pageX, pageY) {
-            sticker.style.left = pageX - shiftX + 'px';
-            sticker.style.top = pageY - shiftY + 'px';
-        }
-
-        // Move the sticker
-        moveAt(e.pageX, e.pageY);
-
-        function onMouseMove(e) {
-            moveAt(e.pageX, e.pageY);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-
-        sticker.onmouseup = function() {
-            document.removeEventListener('mousemove', onMouseMove);
-            sticker.onmouseup = null;
-            saveStickers();
-        };
-    });
-
-    sticker.ondragstart = function() {
-        return false;
-    };
+    
 
     // Make sticker disappear on click
     sticker.addEventListener('click', function() {
