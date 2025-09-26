@@ -1,266 +1,262 @@
-/* General styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* aboutMe.css */
+
+/* --- 1. Variables y Reset --- */
+:root {
+    --primary-color: #ff8c00; /* Naranja Principal */
+    --primary-light: #ffa500;
+    --bg-color: #1a1a1a; /* Fondo Oscuro */
+    --card-bg: #2c2c2c; /* Fondo de Tarjeta */
+    --text-color: #f8f9fa; 
+    --secondary-text: #b0b0b0; 
+    --font-family: 'Poppins', sans-serif;
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
-    color: #f1f1f1;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
-    font-size: 1.1rem;
 }
 
-/* Header styling */
-header {
-    background-color: #333;
-    color: #ff7f00;
-    padding: 2rem 0;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-header h1 {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-header p {
-    margin: 0.5rem 0;
-    font-size: 1.4rem;
-    opacity: 0.9;
+.page-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Section styles */
-section {
-    padding: 3rem;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    background: rgba(51, 51, 51, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin-top: 2rem;
-}
-section h2 {
-    border-bottom: 3px solid #ff7f00;
-    padding-bottom: 0.75rem;
-    margin-bottom: 1.5rem;
-    color: #ff7f00;
-    font-size: 2rem;
-}
-
-/* Footer styling */
-footer {
-    background-color: #333;
-    color: #f1f1f1;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-}
-
-/* Links */
 a {
-    color: #ff7f00;
+    color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 a:hover {
-    color: #f1f1f1;
-    text-decoration: underline;
+    color: var(--primary-light);
 }
 
-/* Social icons */
-.social-icons {
+/* --- 2. Header y Títulos --- */
+.main-header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 2px solid var(--card-bg);
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-size: 3rem;
+    color: var(--primary-light);
+    margin-bottom: 5px;
+}
+
+.role-tag {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+}
+
+.status-note {
+    margin-top: 15px;
+    font-style: italic;
+    color: #f0ad4e; /* Naranja más suave para el aviso */
+}
+
+/* --- 3. Tarjetas de Contenido (Secciones) --- */
+.content-sections h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.about-section p {
+    margin-bottom: 15px;
+    color: var(--secondary-text);
+}
+
+/* --- 4. Habilidades (Skills) --- */
+.skills-grid {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
 }
-.social-icons a {
-    color: #ff7f00;
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    min-width: 100px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-item:hover {
+    background-color: #3d3d3d;
+    transform: translateY(-5px);
+}
+
+.skill-item i {
     font-size: 2.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    color: var(--primary-light);
+    margin-bottom: 8px;
 }
+
+.skill-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* --- 5. Proyectos --- */
+.github-badge-link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 30px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.project-item {
+    border-left: none; /* Quitamos el borde izquierdo de .card para dejar un diseño de lista limpio */
+    padding: 20px;
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+.project-item h3 {
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.project-date {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.repo-info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #444;
+}
+
+.repo-link {
+    font-weight: 600;
+}
+
+.python-tag, .cpp-tag {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: var(--bg-color);
+    font-weight: 700;
+}
+
+.python-tag {
+    background-color: #4B8BBE;
+}
+.cpp-tag {
+    background-color: #00599c;
+}
+
+.call-to-action {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    color: var(--primary-light);
+}
+
+/* --- 6. Contacto y Footer --- */
+.contact-section {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-top: 2px solid var(--card-bg);
+}
+
+.social-icons {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    color: var(--secondary-text);
+}
+
 .social-icons a:hover {
-    color: #f1f1f1;
+    color: var(--primary-color);
     transform: scale(1.1);
+    display: inline-block;
 }
 
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
 
-
-/* Circular home button */
+/* Botón Home Flotante */
 .home-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #ff7f00;
-    color: #f1f1f1;
-    border: none;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 15px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-}
-.home-button:hover {
-    background-color: #e67e22;
-    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    section {
-        padding: 2rem;
-    }
-    header h1 {
+.home-button:hover {
+    background-color: var(--primary-light);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 600px) {
+    .main-title {
         font-size: 2.5rem;
     }
-    header p {
-        font-size: 1.2rem;
+    .card {
+        padding: 20px;
     }
-    .home-button {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+    .skills-grid {
+        justify-content: space-around;
+        gap: 10px;
     }
-    .social-icons a {
-        font-size: 2rem;
+    .skill-item {
+        min-width: 80px;
+        padding: 10px 5px;
     }
-}
-/* Repo card container */
-.repo-card {
-    background-color: #0d1117;
-    color: #f1f1f1;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 20px;
-    width: 400px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-/* Repo title link */
-.repo-title {
-    color: #58a6ff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.repo-title:hover {
-    text-decoration: underline;
-}
-
-/* Repo info container */
-.repo-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1rem;
-    color: #8b949e;
-}
-
-/* Language label styles */
-.repo-language {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.repo-language::before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-/* Language-specific colors */
-.python::before {
-    background-color: #3572A5; /* Python blue */
-}
-
-.cpp::before {
-    background-color: #f34b7d; /* C++ pinkish red */
-}
-
-.java::before {
-    background-color: #b07219; /* Java brown */
-}
-
-.html::before {
-    background-color: #e34c26; /* HTML orange */
-}
-
-.css::before {
-    background-color: #563d7c; /* CSS purple */
-}
-
-.javascript::before {
-    background-color: #f1e05a; /* JavaScript yellow */
-}
-
-/* Badge for public visibility */
-.repo-badge {
-    background: #30363d;
-    color: #c9d1d9;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .repo-card {
-        width: 100%;
-        padding: 15px;
+    .repo-info-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
-
-    .repo-title {
-        font-size: 1.2rem;
-    }
-
-    .repo-info {
-        font-size: 0.9rem;
-    }
-}
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem 0;
-}
-
-.skill-icon {
-    font-size: 3rem;
-    color: #f1f1f1;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.skill-icon:hover {
-    transform: scale(1.2);
-    color: #ff7f00;
-}
-.skill-icon img {
-    width: 3rem;
-    height: 3rem;
-    transition: transform 0.3s ease;
-}
-
-.skill-icon img:hover {
-    transform: scale(1.2);
 }

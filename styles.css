@@ -1,212 +1,217 @@
+/* styles.css */
+
+/* --- 1. Variables Globales y Reset --- */
+:root {
+    /* Paleta Naranja */
+    --primary-color: #ff8c00; /* Naranja Brillante (DarkOrange) */
+    --primary-light: #ffa500; /* Naranja más claro para hover */
+    
+    /* Colores Oscuros */
+    --bg-color: #121212; /* Fondo muy oscuro */
+    --card-bg: #1e1e1e; /* Fondo de tarjetas */
+    --text-color: #e0e0e0; /* Texto claro */
+    --secondary-text: #a0a0a0; /* Texto secundario */
+
+    /* Tipografía y Estructura */
+    --font-family: 'Poppins', sans-serif;
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #1a1a1a;
-  color: #f1f1f1;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-nav {
-  background-color: #333;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.page-container {
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 0 25px;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
 }
 
-nav ul li {
-  margin: 0 1rem;
+a:hover {
+    color: var(--primary-light);
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #f1f1f1;
-  padding: 1rem;
-  display: block;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* --- 2. Encabezado / Sección Hero --- */
+.hero-section {
+    text-align: center;
+    padding: 80px 0 60px;
 }
 
-nav ul li a:hover {
-  background-color: #444;
-  color: #ff7f00;
+.main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Título responsive */
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 5px;
 }
 
-.container {
-  text-align: center;
-  padding-top: 6rem; /* Adjusted for fixed nav */
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  box-sizing: border-box;
+.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--secondary-text);
+    margin-bottom: 25px;
+    font-weight: 300;
 }
 
-.header {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: #ff7f00;
-  font-weight: bold;
-  letter-spacing: 1px;
+.status-message {
+    font-style: italic;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    display: inline-block;
+    border-radius: 5px;
 }
 
-.sub-header {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+/* --- 3. Grid de Proyectos --- */
+.projects-grid {
+    display: grid;
+    /* Grid de 3 columnas en desktop, se ajusta automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 70px;
 }
 
-.icon {
-  font-size: 5rem;
-  color: #ff7f00;
-  margin-bottom: 1rem;
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-top: 5px solid transparent; 
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-top-color var(--transition-speed) ease;
 }
 
-.code-box {
-  background: rgba(51, 51, 51, 0.8);
-  color: #f1f1f1;
-  padding: 1.5rem;
-  border-radius: 10px;
-  font-family: "Courier New", Courier, monospace;
-  margin-top: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+.project-card:hover {
+    transform: translateY(-8px); /* Efecto de levantamiento */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    border-top-color: var(--primary-color); /* Borde naranja destacado */
 }
 
-.code-line {
-  margin: 0;
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.sections {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+.card-content h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
 }
 
-.subsection {
-  background-color: rgba(51, 51, 51, 0.8);
-  padding: 2rem;
-  border-radius: 10px;
-  transition: background-color 0.3s, transform 0.3s;
-  width: 600px;
-  max-width: 600px;
-  box-sizing: border-box;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+.card-content p {
+    color: var(--secondary-text);
+    margin-bottom: 15px;
 }
 
-.subsection:hover {
-  background-color: #444;
-  transform: translateY(-5px);
+.card-action {
+    display: block;
+    margin-top: auto; /* Empuja la acción al fondo de la tarjeta */
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
-.subsection h2 {
-  margin: 0;
-  font-size: 2rem;
-  border-bottom: 3px solid #ff7f00;
-  padding-bottom: 0.75rem;
-  margin-bottom: 1rem;
-  color: #ff7f00;
+.card-status {
+    color: #ff4500; /* Rojo-naranja para el estado */
+    font-weight: 600;
 }
 
-.subsection p {
-  margin: 0.5rem 0 0;
-  font-size: 1.2rem;
+/* --- 4. Sección de Contacto --- */
+.contact-me-section {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #2a2a2a;
+    margin-bottom: 50px;
 }
 
-.section-link {
-  text-decoration: none;
-  color: #ff7f00;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.section-link:hover {
-  color: #f1f1f1;
-  text-decoration: underline;
-}
-
-.contact-me {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.contact-me h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #ff7f00;
+.contact-me-section h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
 }
 
 .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
+    font-size: 2.2rem;
+    margin: 30px 0;
 }
 
 .social-icons a {
-  color: #ff7f00;
-  font-size: 2.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+    margin: 0 18px;
+    color: var(--secondary-text); /* Iconos por defecto gris oscuro */
 }
 
 .social-icons a:hover {
-  color: #f1f1f1;
-  transform: scale(1.1);
+    color: var(--primary-color); /* Naranja en hover */
+    transform: scale(1.2);
+    display: inline-block;
 }
 
-footer {
-  background-color: #333;
-  color: #f1f1f1;
-  text-align: center;
-  padding: 1.5rem 0;
-  margin-top: 2rem;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
+.email-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Texto oscuro en botón brillante */
+    border-radius: 50px; /* Forma de pastilla */
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    transition: background-color var(--transition-speed) ease;
 }
 
-/* Responsive design */
+.email-button:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 140, 0, 0.3);
+}
+
+/* --- 5. Pie de Página --- */
+.site-footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #2a2a2a;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+}
+
+/* --- 6. Media Queries (Responsividad) --- */
 @media (max-width: 768px) {
-  .header {
-      font-size: 2.5rem;
-  }
+    .hero-section {
+        padding: 50px 0 40px;
+    }
 
-  .sub-header {
-      font-size: 1.2rem;
-  }
+    .main-title {
+        font-size: 2.5rem;
+    }
 
-  .icon {
-      font-size: 4rem;
-  }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 20px;
+    }
 
-  .subsection h2 {
-      font-size: 1.5rem;
-  }
+    .social-icons {
+        font-size: 1.8rem;
+    }
 
-  .subsection p {
-      font-size: 1rem;
-  }
+    .social-icons a {
+        margin: 0 12px;
+    }
 
-  .contact-me h2 {
-      font-size: 1.5rem;
-  }
-
-  .social-icons a {
-      font-size: 2rem;
-  }
+    .email-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
 }

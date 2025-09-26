@@ -3,54 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Adrián Manzaanres Romera | Ing. en Robótica</title>
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1 class="header">Adrián Manzaanres Romera</h1>
-        <h1 class="header">Software Robotics Engineering Student</h1>
-        <p class="sub-header">This web is in development, however, you can check a part of my coding life!</p>
+    <div class="page-container">
+        
+        <header class="hero-section">
+            <h1 class="main-title">Adrián Manzaanres Romera</h1>
+            <p class="subtitle">Software Robotics Engineering Student</p>
+            <p class="status-message">
+                This web is under developement right now. Check some of my abailable projects.
+            </p>
+        </header>
 
-        <div class="sections">
-            <a href="./aboutMe.html" class="section-link">
-                <div class="subsection">
+        <main class="projects-grid">
+            <a href="./aboutMe.html" class="project-card primary-card">
+                <div class="card-content">
                     <h2>About Me</h2>
-                    <p>To learn more about me and my projects click here.</p>
+                    <p>Learn more about my background, skills, and personal projects.</p>
+                    <span class="card-action">View More &rarr;</span>
                 </div>
             </a>
-            <a href="#" class="section-link" onclick="showDevelopmentMessage(event)">
-                <div class="subsection">
+            
+            <a href="https://amanza17.is-a.dev/mobile_robotics_blog" class="project-card primary-card">
+                <div class="card-content">
+                    <h2>Mobile robotics</h2>
+                    <p>Blog about my developement in Mobile Robotics subject.</p>
+                    <span class="card-status">View More &rarr;</span>
+                </div>
+            </a>
+            
+            <a href="#" class="project-card secondary-card development-link">
+                <div class="card-content">
                     <h2>RoboTech</h2>
-                    <p>RoboTech is a student group centered in robotics. Do you want to know more? Click here.</p>
+                    <p>A student group focused on robotics and hardware challenges. Click to learn more.</p>
+                    <span class="card-status">(Coming Soon)</span>
                 </div>
             </a>
-            <a href="#" class="section-link" onclick="showDevelopmentMessage(event)">
-                <div class="subsection">
+            
+            <a href="#" class="project-card secondary-card development-link">
+                <div class="card-content">
                     <h2>Aerobot</h2>
-                    <p>Robots, the space, what could go wrong? Learn more clicking here.</p>
+                    <p>Exploring the intersection of robotics and aerospace technology. Click to learn more.</p>
+                    <span class="card-status">(Coming Soon)</span>
                 </div>
             </a>
-        </div>
-
-        <div class="contact-me">
-            <h2>Contact Me</h2>
+        </main>
+        
+        <section class="contact-me-section">
+            <h2>Contacta Conmigo</h2>
             <div class="social-icons">
-                <a href="https://www.instagram.com/_manzanares_17" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/_manzanares_17" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:adrimanzaromcontact@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/amanza17" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/_manzanares_17" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/_manzanares_17" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/yourusername" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:adrimanzaromcontact@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/amanza17" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             </div>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
+            <a href="mailto:adrimanzaromcontact@gmail.com" class="email-button">adrimanzaromcontact@gmail.com</a>
+        </section>
+
+    </div> <footer class="site-footer">
+        <p>&copy; 2025 Adrián Manzaanres Romera. Todos los derechos reservados.</p>
+    </footer>
+
     <script>
-        function showDevelopmentMessage(event) {
-            event.preventDefault();
-            alert("This section is under development. Please check back later.");
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const devLinks = document.querySelectorAll('.development-link');
+            devLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    alert("Esta sección está en desarrollo. ¡Vuelve pronto!");
+                });
+            });
+        });
     </script>
 </body>
 </html>
